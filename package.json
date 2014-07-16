@@ -1,7 +1,7 @@
 {
   "name": "karma-notify-reporter",
   "version": "0.1.0",
-  "description": "A Karma plugin. Report results with OSX Notification Center, Growl or notify-send.",
+  "description": "A karma reporter that reports results with OSX Notification Center, Growl or notify-send.",
   "author": "Justin Cataldo <jdcataldo@gmail.com>",
   "main": "index.js",
   "repository": {
