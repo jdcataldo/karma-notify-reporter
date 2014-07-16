@@ -1,0 +1,30 @@
+{
+  "name": "karma-notify-reporter",
+  "version": "0.1.0",
+  "description": "A Karma plugin. Report results with OSX Notification Center, Growl or notify-send.",
+  "author": "Justin Cataldo <jdcataldo@gmail.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jdcataldo/karma-notify-reporter.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jdcataldo/karma-notify-reporter/issues",
+    "email": "jdcataldo@gmail.com"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-reporter",
+    "osx",
+    "notification center",
+    "growl",
+    "notify-send"
+  ],
+  "dependencies": {
+    "node-notifier": "^3.0.6"
+  },
+  "peerDependencies": {
+    "karma": ">=0.9"
+  },
+  "license": "MIT"
+}
