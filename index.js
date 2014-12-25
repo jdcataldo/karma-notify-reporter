@@ -58,7 +58,7 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
 
     if(reportSuccess) {
       msg = messages.success;
-      notifier.notify(helper.merge(msg, {'message': util.format(msg.message, results.success, time), 'title': util.format(msg.title, browser.name)}));
+      return notifier.notify(helper.merge(msg, {'message': util.format(msg.message, results.success, time), 'title': util.format(msg.title, browser.name)}));
     }
   };
 
