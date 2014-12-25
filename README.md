@@ -25,7 +25,12 @@ module.exports = function(config) {
     notifyReporter: {
       reportEachFailure: true, // Default: false, Will notify on every failed sepc
       reportSuccess: false, // Default: true, Will notify when a suite was successful
-    }
+    },
+    
+    // add karma-notify-reporter to plugins
+    plugins: [
+      'karma-notify-reporter'
+    ]
   });
 };
 ```
