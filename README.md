@@ -2,6 +2,8 @@
 
 > Report test results using OSX Notification Center, [Growl](http://growl.info/) or notify-send.
 
+[![Downloads](https://img.shields.io/npm/dm/karma-notify-reporter.svg)](https://www.npmjs.com/package/karma-notify-reporter)
+
 Built on top of [node-notifier](https://github.com/mikaelbr/node-notifier).  
 
 By default Notification Center will be used on Mac, notify-send will be used on Linux, and Growl will be used if neither Mac 10.8 or Linux.
