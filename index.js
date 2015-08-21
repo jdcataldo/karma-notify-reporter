@@ -48,7 +48,9 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
 
     if (results.disconnected || results.error) {
       msg = messages.error;
-      return notifier.notify(helper.merge(messages.error, {'title': util.format(msg.title, browser.name)}));
+
+      // When all tests fail, result.error = true. Do not return before notifying of failed tests.
+      notifier.notify(helper.merge(messages.error, {'title': util.format(msg.title, browser.name)}));
     }
 
     if (results.failed) {
