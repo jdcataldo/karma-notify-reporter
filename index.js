@@ -1,6 +1,6 @@
-var Notification = require('node-notifier'),
-    util         = require('util'),
-    path         = require('path');
+var notifier = require('node-notifier'),
+    util     = require('util'),
+    path     = require('path');
 
 var messages = {
   success : {
@@ -35,11 +35,10 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
       reporterConfig    = config.notifyReporter || {},
       reportSuccess     = typeof reporterConfig.reportSuccess !==  'undefined' ? reporterConfig.reportSuccess : true,
       reportEachFailure = typeof reporterConfig.reportEachFailure !==  'undefined' ? reporterConfig.reportEachFailure : true,
-      notifier          = new Notification(),
       msg;
-  
+
   baseReporterDecorator(this);
-  
+
   this.adapters = [];
 
   this.onBrowserComplete = function(browser) {
