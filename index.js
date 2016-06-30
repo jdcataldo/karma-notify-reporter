@@ -33,8 +33,8 @@ var messages = {
 var NotifyReporter = function(baseReporterDecorator, helper, logger, config, formatError) {
   var log               = logger.create('reporter.notify'),
       reporterConfig    = config.notifyReporter || {},
-      reportSuccess     = typeof reporterConfig.reportSuccess !==  'undefined' ? reporterConfig.reportSuccess : true,
-      reportEachFailure = typeof reporterConfig.reportEachFailure !==  'undefined' ? reporterConfig.reportEachFailure : true,
+      reportSuccess     = typeof reporterConfig.reportSuccess !== 'undefined' ? reporterConfig.reportSuccess : true,
+      reportEachFailure = typeof reporterConfig.reportEachFailure !== 'undefined' ? reporterConfig.reportEachFailure : true,
       msg;
 
   baseReporterDecorator(this);
@@ -46,22 +46,23 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
         time    = helper.formatTimeInterval(results.totalTime);
 
     if (results.disconnected || results.error) {
+      var error = results.disconnected ? 'Browser Disconnected' : 'An error occured';
       msg = messages.error;
-      return notifier.notify(helper.merge(messages.error, {'title': util.format(msg.title, browser.name)}));
+      return notifier.notify(helper.merge(msg, { 'message' : error, 'title' : util.format(msg.title, browser.name) }));
     }
 
     if (results.failed) {
       msg = messages.failed;
-      return notifier.notify(helper.merge(msg, {'message': util.format(msg.message, results.failed, results.total, time), 'title': util.format(msg.title, browser.name)}));
+      return notifier.notify(helper.merge(msg, { 'message' : util.format(msg.message, results.failed, results.total, time), 'title' : util.format(msg.title, browser.name) }));
     }
 
-    if(reportSuccess) {
+    if (reportSuccess) {
       msg = messages.success;
-      notifier.notify(helper.merge(msg, {'message': util.format(msg.message, results.success, time), 'title': util.format(msg.title, browser.name)}));
+      notifier.notify(helper.merge(msg, { 'message' : util.format(msg.message, results.success, time), 'title' : util.format(msg.title, browser.name) }));
     }
   };
 
-  if (reporterConfig.reportEachFailure){
+  if (reporterConfig.reportEachFailure) {
     this.specFailure = function(browser, result) {
       var specName = result.suite.join(' ') + ' ' + result.description,
           message  = util.format('%s: FAILED\n', specName);
@@ -71,7 +72,7 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
       });
 
       msg = messages.specFailed;
-      notifier.notify(helper.merge(msg, {'message': util.format(msg.message, message), 'title': util.format(msg.title, browser.name)}));
+      notifier.notify(helper.merge(msg, { 'message' : util.format(msg.message, message), 'title' : util.format(msg.title, browser.name) }));
     };
   }
 };
@@ -79,5 +80,5 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
 NotifyReporter.$inject = ['baseReporterDecorator', 'helper', 'logger', 'config', 'formatError'];
 
 module.exports = {
-  'reporter:notify': ['type', NotifyReporter]
+  'reporter:notify' : ['type', NotifyReporter]
 };
