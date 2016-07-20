@@ -36,7 +36,7 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
       reporterConfig      = config.notifyReporter || {},
       reportSuccess       = typeof reporterConfig.reportSuccess !==  'undefined' ? reporterConfig.reportSuccess : true,
       reportEachFailure   = typeof reporterConfig.reportEachFailure !==  'undefined' ? reporterConfig.reportEachFailure : true,
-      reportBackToSuccess = typeof reporterConfig.reportBackToSuccess !==  'undefined' ? reporterConfig.reportBackToSuccess : true,
+      reportBackToSuccess = typeof reporterConfig.reportBackToSuccess !==  'undefined' ? reporterConfig.reportBackToSuccess : false,
       msg;
 
   baseReporterDecorator(this);
