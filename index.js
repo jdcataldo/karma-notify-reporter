@@ -1,4 +1,4 @@
-var Notification = require('node-notifier'),
+var notifier = require('node-notifier'),
     util         = require('util'),
     path         = require('path');
 
@@ -37,7 +37,6 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
       reportSuccess       = typeof reporterConfig.reportSuccess !==  'undefined' ? reporterConfig.reportSuccess : true,
       reportEachFailure   = typeof reporterConfig.reportEachFailure !==  'undefined' ? reporterConfig.reportEachFailure : true,
       reportBackToSuccess = typeof reporterConfig.reportBackToSuccess !==  'undefined' ? reporterConfig.reportBackToSuccess : true,
-      notifier            = new Notification(),
       msg;
 
   baseReporterDecorator(this);
