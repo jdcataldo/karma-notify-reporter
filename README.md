@@ -21,6 +21,11 @@ npm install karma-notify-reporter --save-dev
 // karma.conf.js
 module.exports = function(config) {
   config.set({
+    // Register plugin
+    plugins: [
+      'karma-notify-reporter'
+    ],
+  
     reporters: ['progress', 'notify'],
 
     // Optional Settings
