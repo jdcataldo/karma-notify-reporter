@@ -21,10 +21,16 @@
     "notify-send"
   ],
   "dependencies": {
-    "node-notifier": "^4.5.0"
+    "node-notifier": "^4.5.0",
+    "snyk": "^1.36.2"
   },
   "peerDependencies": {
     "karma": ">=0.9"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
