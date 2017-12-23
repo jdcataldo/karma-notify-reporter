@@ -21,11 +21,18 @@ npm install karma-notify-reporter --save-dev
 // karma.conf.js
 module.exports = function(config) {
   config.set({
+    // If you have plugins listed explicitly, add karma-notify-reporter,
+    // otherwise it will be loaded automatically.
+    plugins: [
+      ...
+      'karma-notify-reporter'
+    ],
+  
     reporters: ['progress', 'notify'],
 
     // Optional Settings
     notifyReporter: {
-      reportEachFailure: true, // Default: false, Will notify on every failed sepc
+      reportEachFailure: true, // Default: false, Will notify on every failed spec
       reportSuccess: false, // Default: true, Will notify when a suite was successful
       reportBackToSuccess: false, // Default: true, Will notify when a suite was back to successful
     }

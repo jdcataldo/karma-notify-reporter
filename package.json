@@ -1,6 +1,6 @@
 {
   "name": "karma-notify-reporter",
-  "version": "0.1.1",
+  "version": "1.0.1",
   "description": "A karma reporter that reports results with OSX Notification Center, Growl or notify-send.",
   "author": "Justin Cataldo <jdcataldo@gmail.com>",
   "main": "index.js",
@@ -21,10 +21,16 @@
     "notify-send"
   ],
   "dependencies": {
-    "node-notifier": "^3.0.6"
+    "node-notifier": "^4.5.0",
+    "snyk": "^1.47.0"
   },
   "peerDependencies": {
     "karma": ">=0.9"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
