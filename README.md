@@ -8,7 +8,7 @@ Built on top of [node-notifier](https://github.com/mikaelbr/node-notifier).
 
 By default Notification Center will be used on Mac, notify-send will be used on Linux, and Growl will be used if neither Mac 10.8 or Linux.
 
-## Installation 
+## Installation
 
 ```js
 npm install karma-notify-reporter --save-dev
@@ -34,6 +34,7 @@ module.exports = function(config) {
     notifyReporter: {
       reportEachFailure: true, // Default: false, Will notify on every failed spec
       reportSuccess: false, // Default: true, Will notify when a suite was successful
+      reportBackToSuccess: false, // Default: true, Will notify when a suite was back to successful
     }
   });
 };
