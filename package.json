@@ -21,7 +21,7 @@
     "notify-send"
   ],
   "dependencies": {
-    "node-notifier": "^5.1.2",
+    "node-notifier": "^5.3.0",
     "snyk": "^1.47.0"
   },
   "peerDependencies": {
