@@ -70,7 +70,7 @@ var NotifyReporter = function(baseReporterDecorator, helper, logger, config, for
     }
   };
 
-  if (reporterConfig.reportEachFailure) {
+  if (reportEachFailure) {
     this.specFailure = function(browser, result) {
       var specName = result.suite.join(' ') + ' ' + result.description,
           message  = util.format('%s: FAILED\n', specName);
