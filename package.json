@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "node-notifier": "^5.3.0",
-    "snyk": "^1.47.0"
+    "snyk": "^1.192.4"
   },
   "peerDependencies": {
     "karma": ">=0.9"
